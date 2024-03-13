@@ -1,0 +1,111 @@
+<!-- HTML CODE for weather page 
+CMPT 276 SFUCENTRAL SPRING 2021
+Hakim Bashe, Sumeet Sara, Dawson Cheng, Rahul Rajesh-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Nav Bar links and scripts -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+  <head>
+    <!-- This contains the links to css, the font info from google, and the nav bar-->
+    <link rel="stylesheet" href="/css/weather.css" />              <!-- changed the href-->
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />  
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/b1caad710b.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+  <!-- https://www.mockplus.com/blog/post/bootstrap-navbar-template -->
+
+  <%- include("partials/nav.ejs") -%>
+
+  </head>
+  <body>
+<!-- Weather widget code from https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-add-weather-forecast-to-my-webpage/ -->
+
+<div class = "container">
+  <h1 class = "filler"></h1>
+  <h1 class = "campuses">Burnaby Campus Weather</h1>
+<div class="weatherWidget" >
+<script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"QFCV9FHU48SAS2D8A737HH4Y3", //Sign up for your personal key
+       location:"Burnaby Mountain, Canada", //Enter an address
+       unitGroup:"metric", //"us" or "metric"
+       forecastDays:6, //how many days forecast to show
+       title:"Burnaby Campus", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d1 = document, s = d1.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d1.head || d1.body).appendChild(s);
+   })();
+</script>
+</div>
+<h1 class = "filler"></h1>
+<h1 class = "campuses">Surrey Campus Weather</h1>
+<div class="weatherWidget2" >
+    <script>
+       window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+       window.weatherWidgetConfig.push({
+           selector:".weatherWidget2",
+           apiKey:"QFCV9FHU48SAS2D8A737HH4Y3", //Sign up for your personal key
+           location:"Surrey, Canada", //Enter an address
+           unitGroup:"metric", //"us" or "metric"
+           forecastDays:6, //how many days forecast to show
+           title:"Surrey Campus", //optional title to show in the 
+           showTitle:true, 
+           showConditions:true
+       });
+      
+       (function() {
+       var d1 = document, s = d1.createElement('script');
+       s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d1.head || d1.body).appendChild(s);
+       })();
+    </script>
+    </div>
+    <h1 class = "filler"></h1>
+    <h1 class = "campuses">Vancouver Campus Weather</h1>
+    <div class="weatherWidget3" >
+        <script>
+           window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+           window.weatherWidgetConfig.push({
+               selector:".weatherWidget3",
+               apiKey:"QFCV9FHU48SAS2D8A737HH4Y3", //Sign up for your personal key
+               location:"Vancouver, Canada", //Enter an address
+               unitGroup:"metric", //"us" or "metric"
+               forecastDays:6, //how many days forecast to show
+               title:"Harbour Center Campus", //optional title to show in the 
+               showTitle:true, 
+               showConditions:true
+           });
+          
+           (function() {
+           var d1 = document, s = d1.createElement('script');
+           s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+           s.setAttribute('data-timestamp', +new Date());
+           (d1.head || d1.body).appendChild(s);
+           })();
+        </script>
+        </div>
+</div>
+<div class="footer-padding"></div>
+<div class="footer">
+<p>SFU Central</p>
+</div>
+  </body>
+</html>

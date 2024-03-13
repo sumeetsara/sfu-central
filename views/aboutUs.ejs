@@ -1,0 +1,114 @@
+<!-- HTML CODE for courses page 
+CMPT 276 SFUCENTRAL SPRING 2021
+Hakim Bashe, Sumeet Sara, Dawson Cheng, Rahul Rajesh-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Nav Bar links and scripts -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+  <head>
+    <!-- This contains the links to css, the font info from google, and the nav bar-->
+    <link rel="stylesheet" href="/css/home.css" />              <!-- changed the href-->
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />  
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/b1caad710b.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+  <!-- https://www.mockplus.com/blog/post/bootstrap-navbar-template -->
+
+  <%- include("partials/nav.ejs") -%>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="discuss-board">
+        <nav class="discuss-nav-container">
+          <ul class="discuss-nav">
+              <li class="discuss-nav-item"><a class="discuss-nav-button" href="/home">Home<i class="fas fa-home"></i></a></li>
+              
+              <li class="discuss-nav-item"><a class="discuss-nav-button"href="/aboutUs">About Us<i class="fas fa-globe"></i></a></li>
+              
+              <li class="discuss-nav-item"><a class="discuss-nav-button"href="/courses">Courses<i class="fas fa-book"></i></a></li>
+          </ul>
+        </nav>
+        <div class="post-container">
+
+
+          <!-- About us section -->
+          
+     
+            <div class="post">
+              <h2 class="post-title">About Us<img src="sfu.jpg" style = "float:right"> 
+              </h2>
+
+              <p class="post-content">SFU Central is a web app for SFU students, by SFU students. In a time where classes are all online, we want to create an environment where students
+                are able to easily connect with one another in order to further advance their studies.
+              </p>
+              
+
+            </div>
+
+             <!-- Features and impementations (not sure how specific to be for this) -->
+            <div class = "post">
+              
+
+              <h2 class ="post-title">Features </h2>
+
+              <li>Discussion board</li>
+              <li>Course Management</li>
+              <li>Friends List and Messaging</li>
+              <li>Live weather on campus</li>
+              
+              
+            </div>
+
+              <!-- Contact info and form (form wont actually be functional) -->
+            
+            <div class = "post">
+            
+              <h2 class ="post-title">Contact Us </h2>
+
+              <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email">
+                
+              </form><br>
+
+              
+
+              <label for="msg">Questions or concerns:</label><br>
+                <textarea type ="msg" name="user_message">  
+                </textarea>
+                
+                <input type="submit" value="Submit">
+
+              </div>
+            </div> 
+        
+          
+          
+          </div>
+        </div>
+    </div>
+    
+    
+  </div>
+    
+    
+
+<div class="footer-padding"></div>
+<div class="footer">
+<p>SFU Central</p>
+</div>
+  </body>
+</html>

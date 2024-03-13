@@ -1,0 +1,52 @@
+<!-- HTML CODE for courses page 
+CMPT 276 SFUCENTRAL SPRING 2021
+Hakim Bashe, Sumeet Sara, Dawson Cheng, Rahul Rajesh-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Nav Bar links and scripts -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+  <head>
+    <!-- This contains the links to css, the font info from google, and the nav bar-->
+    <link rel="stylesheet" href="/css/courseDiscussion.css" />              <!-- changed the href-->
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />  
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/b1caad710b.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+  <!-- https://www.mockplus.com/blog/post/bootstrap-navbar-template -->
+
+  <%- include("partials/nav.ejs") -%>
+
+  </head>
+
+<div class="box" id="heading">
+  <h1><%= courseTitle %></h1>
+</div>
+
+<div class="box">
+  <%  for(var i = 0; i < posts.length; i++) {  %>
+        <div class="item">
+          <p> <span style= "color: #a6192e"><%= posts[i].userID %>:</span> <%= posts[i].bodyOfPost %></p>
+        </div>
+  <%  }  %>
+
+  <form action="/courses/courseDiscussion" method="post">
+    <input type="text" name="newPost" placeholder="New Post" autocomplete="off"/>
+    <button type="submit" name="newCourse" value="<%= courseTitle %>" >+</button>
+  </form>
+</div>
+
+<div class="footer-padding"></div>
+<div class="footer">
+<p>SFU Central</p>
+</div>
+  </body>
+</html>

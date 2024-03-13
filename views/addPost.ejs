@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Nav Bar links and scripts -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Add Post</title>
+    <link rel="stylesheet" href="/css/addPost.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- https://www.mockplus.com/blog/post/bootstrap-navbar-template -->
+
+    <%- include("partials/nav.ejs") -%>
+
+</head>
+<body>
+    <div class="modal-wrapper">
+        <div class="add-text-post-container">
+            <h1>Create a Post</h1>
+            <form action="/addPost" method="post">
+                <div class="form-item">
+                    <label for="sub-forum">Choose a Sub Forum</label><br>
+                    <input type="text" name="sub-forum">
+                </div>
+                <div class="form-item">
+                    <label for="post-title">Title</label><br>
+                    <input type="text" name="postTitle">
+                </div>
+                <div class="form-item">
+                    <label for="post-content">Post Content</label><br>
+                    <textarea id ="post-content" name="postContent" cols="-1" rows="5"></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="submit" name="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  
+
+</body>
+</html>

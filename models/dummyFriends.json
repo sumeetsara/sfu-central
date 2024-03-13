@@ -1,0 +1,50 @@
+[
+   {
+      "name": "John Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   },
+   {
+      "name": "Peter Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   },
+   {
+      "name": "Mary Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   },
+   {
+      "name": "Susan Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   },
+   {
+      "name": "Steel Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   },
+   {
+      "name": "Pepper Doe",
+      "group": [
+         "cmpt 232",
+         "cogs 101",
+         "macm 303"
+      ]
+   }
+]

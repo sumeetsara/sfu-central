@@ -1,0 +1,562 @@
+/* https://www.bootdey.com/snippets/view/newsfeed-friends-list#css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+body {
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #626468;
+  font-style: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+img.profile-photo-md {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/*==================================================
+Create Post Box CSS
+==================================================*/
+
+.create-post {
+  width: 100%;
+  min-height: 90px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f2f2;
+}
+
+.create-post .form-group {
+  margin-bottom: 0;
+  display: inline-flex;
+}
+
+.create-post .form-group .form-control {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.create-post .form-group img.profile-photo-md {
+  margin-right: 10px;
+}
+
+.create-post .tools {
+  padding: 8px 0 10px;
+}
+
+.create-post .tools ul.publishing-tools {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.create-post .tools ul.publishing-tools li a {
+  color: #6d6e71;
+  font-size: 18px;
+}
+
+.create-post .tools ul.publishing-tools li a:hover {
+  color: black;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/*==================================================
+Friend List CSS = Newsfeed and Timeline
+==================================================*/
+
+.friend-list {
+  margin: 50px;
+  color: black;
+}
+
+.friend-card {
+  background-color: white;
+}
+
+.friend-list .friend-card {
+  border-radius: 4px;
+  border-bottom: 1px solid #f1f2f2;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.friend-list .friend-card .card-info {
+  padding: 0 20px 10px;
+}
+
+.friend-list .friend-card .card-info img.profile-photo-lg {
+  margin-top: -60px;
+  border: 7px solid #fff;
+}
+
+img.profile-photo-lg {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.text-green {
+  color: #8dc63f;
+}
+
+/*==================================================
+Socials CSS
+==================================================*/
+
+.socials-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.socials-pseudo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.socials-container {
+  width: 80%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 300px minmax(300px, 1500px);
+  grid-template-rows: 50px  minmax(300px, 75vh);
+  grid-template-areas: 
+  "socials-nav ."
+  "socials-box socials-chat-box";
+  height: 75%;
+}
+
+.socials-nav {
+  grid-area: socials-nav;
+  background-color:  #393e46;
+  margin: 0;
+  list-style-type: none;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+  border-radius: 10px 10px 0px 0px;
+}
+.socials-nav-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  
+}
+.socials-nav-item a {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+  color: #a6192e;
+  border-radius: 10px 10px 0px 0px;
+}
+.socials-nav-item a i {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
+.socials-nav-item a:hover {
+  color: rgb(92, 12, 12);
+}
+
+.socials-box {
+  height: 100%;
+  width: 100%;
+  background-color: #222831;
+  grid-area: socials-box;
+  position: relative;
+}
+
+.friends-box-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 15fr 1fr;
+}
+
+.friends-box {
+  padding: 0.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+button {
+  border-radius: 3px;
+  background-color: #a6192e;
+  color: #f1f2f2;
+  padding: 10px 50px;
+  border: 0;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #68111e;
+  cursor: pointer;
+}
+.button-container {
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+  
+}
+
+.button-container button {
+  border-radius: 3px;
+  background-color: #a6192e;
+  color: #f1f2f2;
+  padding: 10px 50px;
+  border: 0;
+  transition: 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #68111e;
+  cursor: pointer;
+}
+.friend-name-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1.6rem;
+  border-radius: 5px;
+  max-height: 50px;
+  margin: 0.5rem 0rem;
+}
+
+.friend-name-box:hover {
+  background-color: #2f343b;
+  cursor: pointer;
+}
+
+.friend-profile-picture {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color:#a6192e;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  color: #f1f2f2;
+  font-weight: 600;
+  
+}
+
+
+.friend-online-status {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color:gray;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+}
+.friend-active {
+  background-color: green;
+}
+
+.friend-name p {
+  color: #f1f2f2;
+}
+
+.friend-name .name {
+  font-weight: 700;
+}
+
+.friend-name .info {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.friend-name {
+  padding-left: 1rem;
+}
+.friends-box {
+
+}
+
+.groups-box {
+
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 25, 29, 0.8);
+  z-index: 50;
+  visibility: hidden;
+  
+  opacity: 0;
+  
+  transition: 0.7s;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 30px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+
+.add-friend-modal{
+  
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    background: #222831;
+    z-index: 100;
+    visibility: hidden;
+    margin-left: -300px;
+  margin-top: -200px;
+    opacity: 0;
+    
+    transition: 0.5s ease-out;
+    transform: translateY(45px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem;
+}
+
+input {
+  color: rgb(255, 255, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  padding-left: 30px;
+  width: 80%;
+  padding: 20px 10px;
+  
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  background-color: #414953;
+  margin-bottom: 5rem;
+}
+
+.msg-box {
+  font-size: 20px;
+  width: 85%;
+  padding: 8px 5px;
+  margin: 0;
+}
+.send-msg {
+  padding: 10px 15px;
+}
+
+.msg-input-container {
+  display: none;
+  padding: 5px;
+  height: 12%;
+  width: 100%;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.default {
+  padding: 2rem;
+}
+
+
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}
+.msg-input-container > * {
+  display: block;
+}
+
+.msg-input-container form {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+::placeholder {
+  color: rgba(143, 142, 142, 0.596);
+  padding-left: 0.5rem;
+}
+
+.submit-button {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 50%;
+  padding: 10px 30px;
+  display: block;
+  margin: 1rem auto;
+
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  background-color: #a6192e;
+}
+
+.submit-button:hover {
+  transition: ease-in 0.2s;
+  color: rgb(255, 255, 255);
+  background-color: rgb(104, 17, 17);
+}
+
+.msg-container {
+  overflow: auto;
+}
+
+
+.active-modal{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+.socials-chat-box {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #f1f2f2;
+  overflow: auto;
+  
+}
+
+.chat-msg-wrapper {
+  width: 100%;
+  padding: 1rem;
+  text-align: right;
+  display: block;
+  
+}
+.chat-msg-container{
+  display:inline-block;
+  background-color: #222831;
+  padding: 0.5rem 1rem;
+  border-radius: 10px 0px 10px 0px;
+  margin-bottom: 0.3rem;
+  max-width: 46%;
+  min-height: 2.5rem;
+  
+}
+
+.chat-msg {
+  font-size:0.9rem;
+  word-wrap: break-word;
+}
+
+.msg-container {
+  height: 86%;
+}
+
+
+
+
+.socials-chat-box {
+  
+  grid-area: socials-chat-box;
+  background-color: #393e46;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.active {
+  background-color: #222831;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* width */
+.scroll-bar-style::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scroll-bar-style::-webkit-scrollbar-track {
+  background: #222831;
+}
+
+/* Handle */
+.scroll-bar-style::-webkit-scrollbar-thumb {
+  background: #a6192e;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.scroll-bar-style::-webkit-scrollbar-thumb:hover {
+  background: rgb(124, 20, 20);
+}
+
+.footer-padding {
+  padding-bottom: 60px;
+}
+
+.footer {
+  position: fixed;
+  padding-top: 0.1rem;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #a6192e;
+}
+
+.footer p {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.reciever {
+  text-align: left;
+}
+
+.active-friend {
+  background-color: #2f343b;
+  cursor: pointer;
+}

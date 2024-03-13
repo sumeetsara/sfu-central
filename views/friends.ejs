@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Nav Bar links and scripts -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/friends.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b1caad710b.js" crossorigin="anonymous"></script>
+
+  <title>Friends</title>
+  <%- include("partials/nav.ejs") -%>
+</head>
+
+<body>
+  <div class="socials-wrapper">
+    
+    <div class="mask"></div>
+    <div class="socials-pseudo-container">
+      <div class="socials-container">
+        <ul class="socials-nav">
+          <li class="socials-nav-item"><a class="socials-nav-button" href="/friends">Friends<i
+                class="fas fa-user"></i></a></li>
+          <li class="socials-nav-item"><a class="socials-nav-button" href="">Group<i class="fas fa-users"></i></a>
+          </li>
+        </ul>
+        <div class="socials-box">
+          <div class="friends-box-container">
+            <div class="friends-box scroll-bar-style">
+              <% if (friendsList.length == 0) { %>
+                <% } %>
+                  <% friendsList.forEach(function(friend) { %>
+                    <%- include("partials/friend-name-box.ejs", {name: friend}) -%>  
+                  <% }); %>
+            </div>
+            <div class="button-container">
+              <button class="add-friend" type="submit">Add Friend</button>
+            </div>
+          </div>
+  
+          <div class="groups-box"></div>
+        </div>
+        <div class="socials-chat-box">
+          <div id = "chat-container" class="msg-container scroll-bar-style">
+            
+          </div>
+          <p class="default">Click on a friend to chat. If no one is there, add 'john@gmail.com' as friend and start chatting. 
+            Log in to john using password '123' to see the other side of thngs</p>
+          <div class="msg-input-container">
+            <form class="msg" action="">
+              <input autocomplete="off" class="msg-box" type="text" name="msg-box">
+
+                  <button class="send-msg" type="submit">Send</button>
+
+          </form>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+    <%- include("partials/add-friend-modal.ejs") -%>
+  </div>
+
+
+
+
+
+  <div class="footer-padding"></div>
+  <div class="footer">
+    <p>SFU Central</p>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chatBuilder.js"></script>
+  <script src="/js/chat.js"></script>
+  <script>
+    
+    
+    
+    /** Source: https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/*/
+    function setNavigation() {
+      let current_location = location.pathname.split('/')[1];
+      if (current_location === "") return;
+      let menu_items = document.querySelector(".socials-nav-item").getElementsByTagName("a");
+      for (let i = 0, len = menu_items.length; i < len; i++) {
+        if (menu_items[i].getAttribute("href").indexOf(current_location) !== -1) {
+          menu_items[i].parentElement.classList.add("active");
+        }
+      }
+    }
+    setNavigation();
+
+    // Click function for show the Modal
+
+    $(".add-friend").on("click", function () {
+      $(".mask").addClass("active-modal");
+      $(".add-friend-modal").addClass("active-modal");
+
+    });
+
+    // Function for close the Modal
+
+    function closeModal() {
+      $(".mask").removeClass("active-modal");
+      $(".add-friend-modal").removeClass("active-modal");
+    }
+
+    // Call the closeModal function on the clicks/keyboard
+
+    $(".close, .mask, .submit-button").on("click", function () {
+      if (!document.getElementById("addFriend").value) {
+        alert("Invalid Username")
+      }
+      closeModal();
+    });
+
+    $(document).keyup(function (e) {
+      if (e.keyCode == 27) {
+        closeModal();
+      }
+    });
+  </script>
+  
+  
+  
+  
+</body>
+
+</html>

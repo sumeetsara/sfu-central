@@ -1,0 +1,125 @@
+<!-- HTML CODE for home page (index)
+CMPT 276 SFUCENTRAL SPRING 2021
+Hakim Bashe, Sumeet Sara, Dawson Cheng, Rahul Rajesh-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Nav Bar links and scripts -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+  <head>
+    <!-- This contains the links to css, the font info from google, and the nav bar-->
+    <link rel="stylesheet" href="/css/home.css" />              <!-- changed the href-->
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />  
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/b1caad710b.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+  <!-- https://www.mockplus.com/blog/post/bootstrap-navbar-template -->
+
+  <%- include("partials/nav.ejs") -%>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="discuss-board">
+        <nav class="discuss-nav-container">
+          <ul class="discuss-nav">
+              <li class="discuss-nav-item"><a class="discuss-nav-button" href="/home">Home<i class="fas fa-home"></i></a></li>
+              
+              <li class="discuss-nav-item"><a class="discuss-nav-button"href="/aboutUs">About Us<i class="fas fa-globe"></i></a></li>
+              
+              <li class="discuss-nav-item"><a class="discuss-nav-button"href="/courses">Courses<i class="fas fa-book"></i></a></li>
+          </ul>
+        </nav>
+        
+        <div class="post-container">
+          
+          <% if (posts.length == 0) { %>
+            <div class="post">
+              <h1 class="post-title">How to Add New Posts</h1>
+              <p class="post-content">It looks like there is no posts to display.
+                To add a post, click on the plus button at the bottom right corner.
+                This is a default post that is displayed if the array that holds all the posts
+                is empty. Hope I was helpful!
+              </p>
+              <div class="social-icon">
+                <a href="">Like<i class="fas fa-thumbs-up"></i></a>
+                <div class="divider" style="left: 33%; height: 20px;"></div>
+                <a href="">Comments<i class="fas fa-comment"></i></a>
+                <div class="divider" style="right: 33%; height: 20px;"></div>
+                <a href="">Star<i class="fas fa-star"></i></a>
+              </div>
+            </div> 
+          <% } %>
+            <% posts.forEach(function(post) { %>
+              <div class="post">
+                <h1 class="post-title"><%= post.titleOfPost %></h1>
+                <p class="post-content"><%= post.bodyOfPost %></p>
+                <div class="social-icon">
+                  
+                  <form action="/like" method="post">
+                    <button name= "<%= post._id %>" ><i class="fas fa-thumbs-up icons"></i><%= post.likes %></button>
+                  </form>
+                 
+                  <div class="divider" style="left: 33%; height: 20px;"></div>
+
+                  <form action="/dislike" method="post">
+                    <button name= "<%= post._id %>" ><i class="fas fa-thumbs-down icons"></i><%= post.dislikes %></button>
+                  </form>
+
+                  <div class="divider" style="right: 33%; height: 20px;"></div>
+                  
+                  <form action="/star" method="post">
+                    <% if(post.isStar === false) { %>
+                      <button name= "<%= post._id %>" ><i class="far fa-star icons"></i></button>
+                    <%  } else { %>
+                      <button name= "<%= post._id %>" ><i class="fas fa-star icons"></i></button>
+                    <% } %>
+                  </form>
+
+                </div>
+              </div>  
+            <% }); %>
+          
+          
+          
+          </div>
+        </div>
+    </div>
+    
+
+      <button class="float" type="submit"><a href="/addPost"><i class="fas fa-plus"></i></a></button>
+    
+  </div>
+    
+    <!-- Discussion-->
+    <script>
+      /** Source: https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/*/
+      function setNavigation() {
+        let current_location = location.pathname.split('/')[1];
+        if (current_location === "") return;
+        let menu_items = document.querySelector(".discuss-nav-item").getElementsByTagName("a");
+        for (let i = 0, len = menu_items.length; i < len; i++) {
+          if (menu_items[i].getAttribute("href").indexOf(current_location) !== -1) {
+          menu_items[i].parentElement.classList.add("active");
+          }
+        }
+      }
+      setNavigation()
+    </script>
+
+<div class="footer-padding"></div>
+<div class="footer">
+<p>SFU Central</p>
+</div>
+<script src="/js/chat.js"></script>
+  </body>
+</html>

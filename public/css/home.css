@@ -1,0 +1,360 @@
+/* Set font and margin of body */
+/*Box Shadow https://meta.discourse.org/t/suggestion-regarding-the-box-shadow-of-the-dark-theme-composer/77102*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #626468;
+}
+
+/* Set colour of nav bar */
+/* .nav {
+  padding: 1rem;
+  background-color:#a6192e;
+  height: 50%;
+  overflow: hidden;
+} */
+
+button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+/* Set the bubbles around each item in nav bar */
+/* .nav a {
+  border-radius: 50px;
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+  background-color: #c4c4c4;
+} */
+
+/* Float log in and sign up to the right */
+.log {
+  float: right;
+}
+
+/* Followed along with https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_split_screen */
+
+/* Split Screen into two halfs, left is friends right is discussion */
+
+/* Contains the box for the friends list, container is daw
+.container {
+    border-radius: 50px;
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    border: 10px solid rgb(233, 73, 73);
+    background-color: rgb(233, 73, 73);
+    float: left;
+  }
+  
+  /* Contains the discussion board. nav2 is the home logo */
+.Right {
+  display: grid;
+  place-items: center;
+
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  top: 10%;
+}
+
+.nav2 {
+  border-radius: 50px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+
+  height: 50%;
+  background-color: #a6192e;
+}
+/* This centers the text for both containers */
+.center {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  width: 75%;
+}
+
+/* Table formating for discussion */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+/* Css for the plus sign at the bottom */
+.addPost {
+  position: absolute;
+  border-radius: 50px;
+  color: white;
+  width: 100px;
+  height: 100px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #a6192e;
+  right: 75px;
+  bottom: 35px;
+  text-decoration: none;
+}
+
+.addPost a {
+  text-decoration: none;
+}
+
+.footer-padding {
+  padding-bottom: 60px;
+}
+
+.footer {
+  padding-top: 0.1rem;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #a6192e;
+}
+
+.footer p {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+/***********DISCUSSION BOARD**********************/
+
+/**Container that holds the board*/
+.container {
+  display: grid;
+  place-items: center;
+}
+
+/***Main styles for the dicussion board*/
+.discuss-board {
+  animation: fadeIn ease 1s;
+  margin-top: 3rem;
+  border-radius: 10px;
+
+  width: 65%;
+  background-color: #393e46;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}
+
+/**Styles regarding the navigation bar inside the board*/
+.discuss-nav-container {
+  width: 100%;
+  height: 20%;
+}
+.discuss-nav {
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+}
+.discuss-nav-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.discuss-nav-item a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+  color: #a6192e;
+}
+.discuss-nav-item a i {
+  margin-bottom: 0.4rem;
+  font-size: 60px;
+}
+.discuss-nav-item a:hover {
+  color: rgb(58, 6, 6);
+}
+
+/****Simple divider for the seperator between social icons*/
+.divider {
+  position: absolute;
+  border-left: 2px solid #000;
+  height: 70px;
+}
+
+/**Container that holds all the posts*/
+.post-container {
+  background-color: #222831;
+  padding: 2rem 2rem 1rem 2rem;
+  height: 70vh;
+  overflow: auto;
+  border-radius: 0 0 10px 10px;
+}
+
+/**Styles for each post*/
+.post {
+  color: #222831;
+  background-color: #dfdcdc;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem 1rem 2rem;
+  animation: fadeIn ease 1s;
+  margin-bottom: 1.5rem;
+}
+.post-title {
+  color: #000;
+  margin-bottom: 1.8rem;
+}
+.post-content {
+  min-height: 190px;
+  max-height: 190px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/**Styles for the social icons*/
+.social-icon {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.social-icon a {
+  display: flex;
+  flex-direction: row-reverse;
+  text-decoration: none;
+  transition: 0.3s;
+  color: #222831;
+}
+
+.social-icon button:hover {
+  color: #a6192e;
+}
+
+.social-icon a i {
+  margin-right: 1rem;
+}
+
+.icons {
+  margin-right: 10px;
+}
+
+.active {
+  background-color: #222831;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/**Floating Add Post Button Style*/
+.float {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  bottom: 100px;
+  right: 100px;
+  background-color: #a6192e;
+  transition: 0.3s;
+  font-size: 25px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px rgb(107, 34, 34);
+}
+.float:hover {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+}
+
+.float a {
+  color: #c4c4c4;
+}
+
+/* width */
+.post-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.post-container::-webkit-scrollbar-track {
+  background: #222831;
+}
+
+/* Handle */
+.post-container::-webkit-scrollbar-thumb {
+  background: rgb(233, 73, 73);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.post-container::-webkit-scrollbar-thumb:hover {
+  background: brown;
+}
+
+/*Fade animation from here: https://codepen.io/thenocturnalfey/pen/jOEjaZR*/
+
+/**FADING ANIMATION CODE**/
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
